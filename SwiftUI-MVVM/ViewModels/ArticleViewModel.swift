@@ -29,11 +29,11 @@ final class ArticleViewModel: Identifiable {
     }
 
     var timeSincePublishedString: String {
-        let components = calendar.dateComponents([.hour, .minute], from: now, to: article.publishedDate)
+        let components = calendar.dateComponents([.hour, .minute], from: article.publishedDate, to: now)
 
-        if let hours = components.hour {
+        if let hours = components.hour, hours > 0 {
             return "\(hours)h ago"
-        } else if let mintutes = components.minute {
+        } else if let mintutes = components.minute, mintutes > 0 {
             return "\(mintutes)m ago"
         } else {
             return "now"
