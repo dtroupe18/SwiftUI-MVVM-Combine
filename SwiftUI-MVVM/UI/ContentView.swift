@@ -15,7 +15,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List(model.articles) { article in
+            List(model.articleViewModels) { article in
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text(article.title)
@@ -23,9 +23,15 @@ struct ContentView: View {
                         .font(.headline)
 
                     Text(article.description)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.primary)
                         .lineLimit(nil)
                         .font(.body)
+                        .multilineTextAlignment(.leading)
+
+                    Text(article.timeSincePublishedString)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                        .font(.footnote)
                 }
             }
             .navigationBarTitle(Text("US News"))

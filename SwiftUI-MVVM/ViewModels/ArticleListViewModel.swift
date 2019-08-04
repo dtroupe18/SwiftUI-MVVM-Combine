@@ -17,17 +17,16 @@ final class ArticleListViewModel: ObservableObject {
         fetchTopHeadlines()
     }
 
-    var articles = [ArticleViewModel]() {
+    var articleViewModels = [ArticleViewModel]() {
         didSet {
             objectWillChange.send(self)
         }
     }
 
     private func fetchTopHeadlines() {
-        NetworkService().loadTopHeadlines(onSuccess: { [weak self] articlesOrNil in
-            if let articles = articlesOrNil {
-                self?.articles = articles.map(ArticleViewModel.init)
-            }
+        NetworkService().loadTopHeadlines(onSuccess: { [weak self] articleArray in
+            guard let sself = self else { return }
+            sself.articleViewModels = articleArray.map(ArticleViewModel.init)
         }, onError: { /*[weak self]*/ error in
             print(error.localizedDescription)
         })

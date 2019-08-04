@@ -9,7 +9,7 @@
 import UIKit
 
 typealias ErrorCallback = (Error) -> Void
-typealias ArticleCallback = ([Article]?) -> Void
+typealias ArticleCallback = ([Article]) -> Void
 
 private enum RequestError: String, Error {
     case noData = "No response from server please try again."
@@ -39,20 +39,31 @@ final class NetworkService {
         URLSession.shared.dataTask(with: url) { data, response, error in
 
             if let err = error {
-                onError?(err)
+                DispatchQueue.main.async {
+                    onError?(err)
+                }
                 return
             }
 
             guard let data = data else {
-                onError?(RequestError.noData.error)
+                DispatchQueue.main.async {
+                    onError?(RequestError.noData.error)
+                }
                 return
             }
 
-            let response = try? JSONDecoder().decode(NewsResponse.self, from: data)
+            let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
+            print(json.asJSON)
 
-            if let response = response {
+            do {
+                let response = try JSONDecoder().decode(NewsResponse.self, from: data)
                 DispatchQueue.main.async {
                     onSuccess?(response.articles)
+                }
+
+            } catch let error {
+                DispatchQueue.main.async {
+                    onError?(error)
                 }
             }
         }.resume()

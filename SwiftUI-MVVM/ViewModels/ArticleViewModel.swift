@@ -10,8 +10,11 @@ import Foundation
 
 final class ArticleViewModel: Identifiable {
 
+    private let calendar = Calendar.current
+    private let now = Date()
+
     let id = UUID()
-    let article: Article
+    private let article: Article
 
     init(article: Article) {
         self.article = article
@@ -22,6 +25,18 @@ final class ArticleViewModel: Identifiable {
     }
 
     var description: String {
-        return self.article.description ?? ""
+        return self.article.articleDescription ?? ""
+    }
+
+    var timeSincePublishedString: String {
+        let components = calendar.dateComponents([.hour, .minute], from: now, to: article.publishedDate)
+
+        if let hours = components.hour {
+            return "\(hours)h ago"
+        } else if let mintutes = components.minute {
+            return "\(mintutes)m ago"
+        } else {
+            return "now"
+        }
     }
 }
