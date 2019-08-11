@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5522EEEE22F764FD00CAF52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522EEED22F764FD00CAF52F /* AppDelegate.swift */; };
 		5522EEF022F764FD00CAF52F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522EEEF22F764FD00CAF52F /* SceneDelegate.swift */; };
-		5522EEF222F764FD00CAF52F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522EEF122F764FD00CAF52F /* ContentView.swift */; };
+		5522EEF222F764FD00CAF52F /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522EEF122F764FD00CAF52F /* ArticleListView.swift */; };
 		5522EEF422F764FE00CAF52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5522EEF322F764FE00CAF52F /* Assets.xcassets */; };
 		5522EEF722F764FE00CAF52F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5522EEF622F764FE00CAF52F /* Preview Assets.xcassets */; };
 		5522EEFA22F764FE00CAF52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5522EEF822F764FE00CAF52F /* LaunchScreen.storyboard */; };
@@ -21,6 +21,8 @@
 		5522EF1C22F76A3500CAF52F /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5522EF1B22F76A3500CAF52F /* Keys.plist */; };
 		5522EF1F22F7736400CAF52F /* SampleResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 5522EF1E22F7736400CAF52F /* SampleResponse.json */; };
 		5522EF2222F778C700CAF52F /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5522EF2122F778C700CAF52F /* Dictionary+Utils.swift */; };
+		55512A6A2300439D009385DE /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55512A692300439D009385DE /* ImageLoader.swift */; };
+		55512A6C2300462F009385DE /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55512A6B2300462F009385DE /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 		5522EEEA22F764FD00CAF52F /* SwiftUI-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5522EEED22F764FD00CAF52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5522EEEF22F764FD00CAF52F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5522EEF122F764FD00CAF52F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5522EEF122F764FD00CAF52F /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		5522EEF322F764FE00CAF52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5522EEF622F764FE00CAF52F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5522EEF922F764FE00CAF52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		5522EF1B22F76A3500CAF52F /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		5522EF1E22F7736400CAF52F /* SampleResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleResponse.json; sourceTree = "<group>"; };
 		5522EF2122F778C700CAF52F /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
+		55512A692300439D009385DE /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		55512A6B2300462F009385DE /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				5522EF0F22F7657900CAF52F /* NetworkService.swift */,
+				55512A692300439D009385DE /* ImageLoader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -155,7 +160,8 @@
 		5522EF1A22F7690800CAF52F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				5522EEF122F764FD00CAF52F /* ContentView.swift */,
+				5522EEF122F764FD00CAF52F /* ArticleListView.swift */,
+				55512A6B2300462F009385DE /* ImageView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -192,6 +198,8 @@
 			dependencies = (
 			);
 			name = "SwiftUI-MVVM";
+			packageProductDependencies = (
+			);
 			productName = "SwiftUI-MVVM";
 			productReference = 5522EEEA22F764FD00CAF52F /* SwiftUI-MVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +250,8 @@
 				Base,
 			);
 			mainGroup = 5522EEE122F764FD00CAF52F;
+			packageReferences = (
+			);
 			productRefGroup = 5522EEEB22F764FD00CAF52F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -279,13 +289,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55512A6C2300462F009385DE /* ImageView.swift in Sources */,
 				5522EEEE22F764FD00CAF52F /* AppDelegate.swift in Sources */,
 				5522EF1222F765B600CAF52F /* NewsResponse.swift in Sources */,
 				5522EEF022F764FD00CAF52F /* SceneDelegate.swift in Sources */,
 				5522EF2222F778C700CAF52F /* Dictionary+Utils.swift in Sources */,
 				5522EF1722F7662700CAF52F /* ArticleViewModel.swift in Sources */,
+				55512A6A2300439D009385DE /* ImageLoader.swift in Sources */,
 				5522EF1022F7657900CAF52F /* NetworkService.swift in Sources */,
-				5522EEF222F764FD00CAF52F /* ContentView.swift in Sources */,
+				5522EEF222F764FD00CAF52F /* ArticleListView.swift in Sources */,
 				5522EF1922F7666000CAF52F /* ArticleListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

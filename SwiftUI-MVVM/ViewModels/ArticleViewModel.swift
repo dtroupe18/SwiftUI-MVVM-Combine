@@ -39,4 +39,13 @@ final class ArticleViewModel: Identifiable {
             return "now"
         }
     }
+
+    var imageUrlString: String? {
+        return article.imageUrlString
+    }
+
+//    var imageUrl: URL? {
+//        guard let urlString = article.imageUrlString else { return nil }
+//        return URL(string: urlString)
+//    }
 }

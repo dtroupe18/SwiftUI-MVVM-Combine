@@ -11,24 +11,26 @@ import Combine
 
 struct ContentView: View {
 
-    @ObservedObject var model = ArticleListViewModel()
+    @ObservedObject private var model = ArticleListViewModel()
 
     var body: some View {
         NavigationView {
-            List(model.articleViewModels) { article in
+            List(model.articleViewModels) { articleVM in
 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(article.title)
+                    Text(articleVM.title)
                         .lineLimit(nil)
                         .font(.headline)
 
-                    Text(article.description)
+                    ImageView(urlString: articleVM.imageUrlString)
+
+                    Text(articleVM.description)
                         .foregroundColor(.primary)
                         .lineLimit(nil)
                         .font(.body)
                         .multilineTextAlignment(.leading)
 
-                    Text(article.timeSincePublishedString)
+                    Text(articleVM.timeSincePublishedString)
                         .foregroundColor(.secondary)
                         .lineLimit(1)
                         .font(.footnote)
