@@ -22,7 +22,9 @@ struct ContentView: View {
                         .lineLimit(nil)
                         .font(.headline)
 
-                    ImageView(urlString: articleVM.imageUrlString)
+
+                    // Handle optional images
+                    articleVM.imageUrlString.map { ImageView(urlString: $0) }
 
                     Text(articleVM.description)
                         .foregroundColor(.primary)
