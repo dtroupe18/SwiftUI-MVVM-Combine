@@ -14,18 +14,11 @@ let placeholder = UIImage(systemName: "photo")!
 struct ImageView: View {
     @ObservedObject private var imageLoader = Loader()
 
-    let urlString: String?
-    let url: URL?
+    let url: URL
 
-    init(urlString: String?) {
-        self.urlString = urlString
-
-        if let urlStr = urlString {
-            self.url = URL(string: urlStr)
-            imageLoader.url = self.url
-        } else {
-            self.url = nil
-        }
+    init(url: URL) {
+        self.url = url
+        imageLoader.url = self.url
     }
 
     var image: UIImage? {
@@ -42,7 +35,7 @@ struct ImageView: View {
 #if DEBUG
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView(urlString: "google.com")
+        ImageView(url: URL(string: "www.google.com")!)
     }
 }
 #endif
